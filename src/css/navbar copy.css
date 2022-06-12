@@ -81,10 +81,12 @@
 	}
 	.Navbar > .nav-items {
 		z-index: 13;
-		position: absolute;
+		position: fixed;
 		top: 00px;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		/* justify-content: center; */
 		background-image: linear-gradient(
 			101deg,
 			var(--goldenyellow),
@@ -119,8 +121,9 @@
 		width: 50px;
 		height: 50px;
 		align-items: center;
-		justify-content: center;
+		/* justify-content: center; */
 		cursor: pointer;
+		/* position: fixed; */
 	}
 
 	.nav-toggle > .bar {

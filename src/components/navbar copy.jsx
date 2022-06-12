@@ -5,6 +5,8 @@ import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3 from 'web3';
 import { providers, ethers } from 'ethers';
+import { Link } from 'react-router-dom';
+import About from './About';
 let web3Modal;
 let provider;
 let selectedAccount;
@@ -122,7 +124,8 @@ const Navbar = () => {
 				<img className='logo-img' src={logo} />
 			</span>
 
-			<div className={`nav-items ${isOpen && 'open'}`}>
+			<div className={`nav-items content ${isOpen && 'open'}`}>
+				<Link to='/About'>About</Link>
 				<a href='/home'>Home</a>
 				<a href='/about'>About</a>
 				<a href='/service'>Service</a>

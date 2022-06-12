@@ -55,6 +55,6 @@ html {
 	width: 0.2rem;
 }
 
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
 	background-color: var(--yellow);
-}
+} */
