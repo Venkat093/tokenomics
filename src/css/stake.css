@@ -1,0 +1,186 @@
+.signup {
+	border-bottom: 0.1rem solid white;
+	padding-top: 4rem;
+	overflow-y: hidden;
+	margin-top: 0.5rem;
+}
+.signup .container {
+	padding: 1rem 1rem !important;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	font-size: 18px;
+}
+.signup .container .content {
+	margin-top: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: flex-start;
+}
+.signup .container .content .sub-title {
+	color: var(--goldenyellow);
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+.signup .container .content .title {
+	color: var(--accent-color1);
+}
+.signup .container .content .description {
+	color: var(--accent-color3);
+}
+.signup .container .content button {
+	color: var(--accent-color1);
+	background-color: var(--background);
+	font-weight: bold;
+	padding: 1rem 3rem;
+	border-radius: 2rem;
+	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+	border: solid 3px transparent;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0)
+		),
+		linear-gradient(101deg, var(--goldenyellow), var(--yellow));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	box-shadow: 2px 1000px 1px var(--background) inset;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+}
+.signup .container .content button :hover {
+	box-shadow: none;
+}
+
+.signup .container .image-container {
+	text-align: center;
+	position: relative;
+	z-index: 10;
+}
+.stake-card {
+	height: 10cm;
+	width: 15cm;
+	font-size: 18px;
+	background-color: rgb(113, 113, 113) !important;
+	border-radius: 15px !important;
+}
+.Stake {
+	padding-right: 3rem !important;
+	padding-left: 3rem !important;
+}
+
+.stake-card button:hover {
+	box-shadow: none;
+}
+
+.stake-card button {
+	color: var(--accent-color1);
+	background-color: var(--background);
+	font-weight: bold;
+	padding: 1rem 3rem;
+	border-radius: 2rem;
+	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+	border: solid 3px transparent;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0)
+		),
+		linear-gradient(101deg, var(--goldenyellow), var(--yellow));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	box-shadow: 2px 1000px 1px var(--background) inset;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+}
+@media screen and (min-width: 780px) and (max-width: 1080px) {
+	.signup {
+		position: relative;
+		overflow-x: hidden;
+		margin-top: 1rem;
+	}
+	.Stake {
+		padding-right: 0rem !important;
+		padding-left: 0rem !important;
+	}
+	.stake-card {
+		font-size: 28px;
+		width: 650px;
+	}
+	.signup .container {
+		font-size: 16px;
+		grid-template-columns: 0.7fr;
+		padding: 1rem 1rem !important;
+	}
+	.signup .image-container {
+		position: absolute;
+		right: -5%;
+		top: 30%;
+	}
+	.signup .image-container .image img {
+		height: 10rem;
+	}
+	.signup .container .content .sub-title {
+		font-size: 25px;
+	}
+}
+@media screen and (min-width: 535px) and (max-width: 780px) {
+	.signup {
+		position: relative;
+		overflow-x: hidden;
+		margin-top: 1rem;
+	}
+	.Stake {
+		padding-right: 0rem !important;
+		padding-left: 0rem !important;
+	}
+	.stake-card {
+		font-size: 28px;
+		width: 500px;
+	}
+	.signup .container {
+		font-size: 16px;
+		grid-template-columns: 0.7fr;
+		padding: 1rem 1rem !important;
+	}
+	.signup .image-container {
+		position: absolute;
+		right: -5%;
+		top: 30%;
+	}
+	.signup .image-container .image img {
+		height: 10rem;
+	}
+	.signup .container .content .sub-title {
+		font-size: 25px;
+	}
+}
+@media screen and (min-width: 250px) and (max-width: 535px) {
+	.signup {
+		position: relative;
+		overflow-x: hidden;
+		margin-top: 1rem;
+	}
+	.Stake {
+		padding-right: 0rem !important;
+		padding-left: 0rem !important;
+	}
+	.stake-card {
+		font-size: 28px;
+		width: 9.5cm;
+	}
+	.signup .container {
+		font-size: 16px;
+		grid-template-columns: 0.7fr;
+		padding: 1rem 1rem !important;
+	}
+	.signup .image-container {
+		position: absolute;
+		right: -5%;
+		top: 30%;
+	}
+	.signup .image-container .image img {
+		height: 10rem;
+	}
+	.signup .container .content .sub-title {
+		font-size: 25px;
+	}
+}

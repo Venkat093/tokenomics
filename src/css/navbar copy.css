@@ -83,6 +83,7 @@
 		z-index: 13;
 		position: fixed;
 		top: 00px;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;

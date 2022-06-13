@@ -3,6 +3,8 @@ footer {
 	display: flex;
 	flex-direction: column;
 	gap: 5rem;
+	margin-top: auto;
+	padding-top: 2rem !important;
 }
 footer .upper {
 	display: flex;

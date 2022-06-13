@@ -13,6 +13,9 @@
 	--background: rgb(13, 14, 32);
 	--font-family: 'Inter', sans-serif;
 }
+html {
+	height: 100%;
+}
 
 [data-theme='light'] {
 	--background: #ffffff;
@@ -38,7 +41,11 @@ html {
 	overflow-x: hidden;
 	transition: 0.5s ease-in-out;
 	padding: 2rem 4rem;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
+
 @media screen and (min-width: 280px) and (max-width: 1080px) {
 	.app-container {
 		padding: 0;

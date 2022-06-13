@@ -125,10 +125,10 @@ const Navbar = () => {
 			</span>
 
 			<div className={`nav-items content ${isOpen && 'open'}`}>
-				<Link to='/About'>About</Link>
-				<a href='/home'>Home</a>
-				<a href='/about'>About</a>
-				<a href='/service'>Service</a>
+				<a href='/Stake'>Stake</a>
+				<a href='/'>Home</a>
+				<a href='/'>About</a>
+				<a href='/'>Service</a>
 				<a href='/contact'>Contact</a>
 			</div>
 			<div>
