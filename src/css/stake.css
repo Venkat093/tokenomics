@@ -170,7 +170,7 @@
 	.signup .container {
 		font-size: 16px;
 		grid-template-columns: 0.7fr;
-		padding: 1rem 1rem !important;
+		padding: 1rem 0.5rem !important;
 	}
 	.signup .image-container {
 		position: absolute;
