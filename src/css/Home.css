@@ -50,7 +50,7 @@
 .home .container .image-container {
 	text-align: center;
 	position: relative;
-	z-index: 10;
+	z-index: 1;
 }
 .container .image-container .image img {
 	width: 50%;
