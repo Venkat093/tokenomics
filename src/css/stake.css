@@ -4,11 +4,38 @@
 	overflow-y: hidden;
 	margin-top: 0.5rem;
 }
+.am {
+	font-size: 18px;
+	font-family: 'Courier New', Courier, monospace;
+	color: #fff;
+	margin-top: 10px;
+	font-weight: bold;
+}
+.stake-fun {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 15px;
+}
+
+.inp {
+	padding: 5px 2px;
+	background-color: #4a4a4a !important;
+	color: white !important;
+	border-radius: 1rem;
+}
+
 .signup .container {
 	padding: 1rem 1rem !important;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	font-size: 18px;
+}
+.rewards {
+	margin-left: 44px !important;
+}
+.claim-btn {
+	margin-right: 75px !important;
 }
 .signup .container .content {
 	margin-top: 3rem;
@@ -30,7 +57,7 @@
 }
 .signup .container .content button {
 	color: var(--accent-color1);
-	background-color: var(--background);
+	background-color: #4a4a4a;
 	font-weight: bold;
 	padding: 1rem 3rem;
 	border-radius: 2rem;
@@ -43,7 +70,7 @@
 		linear-gradient(101deg, var(--goldenyellow), var(--yellow));
 	background-origin: border-box;
 	background-clip: content-box, border-box;
-	box-shadow: 2px 1000px 1px var(--background) inset;
+	box-shadow: 2px 1000px 1px #4a4a4a inset;
 	transition: 0.5s ease-in-out;
 	cursor: pointer;
 }
@@ -57,7 +84,7 @@
 	z-index: 10;
 }
 .stake-card {
-	height: 10cm;
+	height: 8cm;
 	width: 15cm;
 	font-size: 18px;
 	background-color: rgb(113, 113, 113) !important;
@@ -74,9 +101,9 @@
 
 .stake-card button {
 	color: var(--accent-color1);
-	background-color: var(--background);
+	background-color: #4a4a4a;
 	font-weight: bold;
-	padding: 1rem 3rem;
+	padding: 0.5rem 0.5rem;
 	border-radius: 2rem;
 	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
 	border: solid 3px transparent;
@@ -87,7 +114,7 @@
 		linear-gradient(101deg, var(--goldenyellow), var(--yellow));
 	background-origin: border-box;
 	background-clip: content-box, border-box;
-	box-shadow: 2px 1000px 1px var(--background) inset;
+	box-shadow: 2px 1000px 1px #4a4a4a inset;
 	transition: 0.5s ease-in-out;
 	cursor: pointer;
 }
@@ -97,6 +124,11 @@
 		overflow-x: hidden;
 		margin-top: 1rem;
 	}
+	.stake-fun {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	.Stake {
 		padding-right: 0rem !important;
 		padding-left: 0rem !important;
@@ -104,6 +136,10 @@
 	.stake-card {
 		font-size: 28px;
 		width: 650px;
+		height: 16cm;
+	}
+	.stake2 {
+		margin-top: 8px;
 	}
 	.signup .container {
 		font-size: 16px;
@@ -128,6 +164,11 @@
 		overflow-x: hidden;
 		margin-top: 1rem;
 	}
+	.stake-fun {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	.Stake {
 		padding-right: 0rem !important;
 		padding-left: 0rem !important;
@@ -135,6 +176,10 @@
 	.stake-card {
 		font-size: 28px;
 		width: 500px;
+		height: 14.5cm;
+	}
+	.stake2 {
+		margin-top: 8px;
 	}
 	.signup .container {
 		font-size: 16px;
@@ -152,8 +197,46 @@
 	.signup .container .content .sub-title {
 		font-size: 25px;
 	}
+	.stake-card button {
+		color: var(--accent-color1);
+		background-color: #4a4a4a;
+		font-weight: bold;
+		padding: 0.1rem 1.1rem !important;
+		border-radius: 2rem;
+		box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+		border: solid 3px transparent;
+		background-image: linear-gradient(
+				rgba(255, 255, 255, 0),
+				rgba(255, 255, 255, 0)
+			),
+			linear-gradient(101deg, var(--goldenyellow), var(--yellow));
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		box-shadow: 2px 1000px 1px #4a4a4a inset;
+		transition: 0.5s ease-in-out;
+		cursor: pointer;
+	}
 }
 @media screen and (min-width: 250px) and (max-width: 535px) {
+	.stake-card button {
+		color: var(--accent-color1);
+		background-color: #4a4a4a;
+		font-weight: bold;
+		padding: 0.1rem 1.1rem !important;
+		border-radius: 2rem;
+		box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+		border: solid 3px transparent;
+		background-image: linear-gradient(
+				rgba(255, 255, 255, 0),
+				rgba(255, 255, 255, 0)
+			),
+			linear-gradient(101deg, var(--goldenyellow), var(--yellow));
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		box-shadow: 2px 1000px 1px #4a4a4a inset;
+		transition: 0.5s ease-in-out;
+		cursor: pointer;
+	}
 	.signup {
 		position: relative;
 		overflow-x: hidden;
@@ -163,9 +246,21 @@
 		padding-right: 0rem !important;
 		padding-left: 0rem !important;
 	}
+	.stake-fun {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	.stake-card {
 		font-size: 28px;
-		width: 9.5cm;
+		width: 9cm;
+		height: 17cm;
+	}
+	.stake2 {
+		margin-top: 8px;
+	}
+	.inp {
+		width: 100%;
 	}
 	.signup .container {
 		font-size: 16px;

@@ -21,7 +21,8 @@
 		"scrollreveal": "^4.0.9",
 		"web-vitals": "^1.1.2",
 		"web3": "^1.5.2",
-		"web3modal": "^1.9.4"
+		"web3modal": "^1.9.4",
+		"from-exponential": "^1.1.1"
 	},
 	"scripts": {
 		"start": "react-scripts start",

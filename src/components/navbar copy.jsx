@@ -89,33 +89,34 @@ async function disconnet() {
 	}
 }
 
-const Navbar = () => {
+const Navbar = ({ change, web3m, provider1 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [acc, setacc] = useState();
-	const [webm3, setweb3m] = useState();
-	const [provider1, setprovider1] = useState();
+
 	const [account, setAccount] = useState();
 	useEffect(async () => {
 		if (acc) {
-			provider = await web3Modal?.connect();
+			provider = await web3Modal.connect();
 			console.log(provider, ' --> provider');
 			const web3 = new Web3(provider);
 			const accounts = await web3.eth.getAccounts();
 			console.log('dddd', accounts);
 			console.log(web3);
-			setweb3m(web3);
-			setprovider1(provider);
+			web3m(web3);
+			provider1(provider);
+
 			setAccount(accounts[0]);
 		}
 	}, [acc]);
 
 	useEffect(() => {
 		init();
-
+		change(false);
 		if (web3Modal.cachedProvider) {
 			console.log('accaa', web3Modal.cachedProvider);
 			console.log('connected');
 			setacc(true);
+			change(true);
 		}
 	}, []);
 	return (
@@ -128,7 +129,6 @@ const Navbar = () => {
 				<a href='/Stake'>Stake</a>
 				<a href='/'>Home</a>
 				<a href='/'>About</a>
-				<a href='/'>Service</a>
 				<a href='/contact'>Contact</a>
 			</div>
 			<div>
