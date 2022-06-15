@@ -18,9 +18,9 @@ function init() {
 				// Mikko's test key - don't copy as your mileage may vary
 				// infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
 				rpc: {
-					4: 'https://rinkeby.infura.io/v3/',
+					80001: 'https://rpc-mumbai.matic.today',
 				},
-				chainId: 4,
+				chainId: 80001,
 			},
 		},
 	};

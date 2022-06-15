@@ -37,7 +37,7 @@ function App() {
 		setweb3main(v);
 	};
 	console.log('acuccc', acc);
-	console.log('expo', fromExponential(parseFloat(0.0321) * Math.pow(10, 18)));
+	//	console.log('expo', fromExponential(parseFloat(0.0321) * Math.pow(10, 18)));
 	useEffect(() => {
 		if (accountid != accountid1) {
 			window.location.reload();

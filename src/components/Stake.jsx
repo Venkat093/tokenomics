@@ -136,7 +136,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			earnedRewards();
 			stakeTokenBalance();
 		}
-	}, [acc, web3main]);
+	});
 	const earnedRewards = async () => {
 		if (acc && web3main) {
 			console.log('data');
