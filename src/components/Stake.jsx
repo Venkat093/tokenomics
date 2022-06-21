@@ -229,12 +229,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								<span>Rewards Earned {rewards ? rewards : ''}</span>
 							</div>
 							<div className=' stake2 claim-btn'>
-								<button
-									onClick={() => {
-										claimRewards();
-									}}>
-									Claim rewards
-								</button>
+								<button onClick={claimRewards}>Claim rewards</button>
 							</div>
 						</div>
 
@@ -252,20 +247,10 @@ const Stake = ({ auc, acc, web3main }) => {
 								/>
 							</div>
 							<div className=' stake2 mb-2'>
-								<button
-									onClick={() => {
-										StakeToken();
-									}}>
-									Stake
-								</button>
+								<button onClick={StakeToken}>Stake</button>
 							</div>
 							<div className='stake3 px-1'>
-								<button
-									onClick={() => {
-										withdrawAmount();
-									}}>
-									Unstake
-								</button>
+								<button onClick={withdrawAmount}>Unstake</button>
 							</div>
 						</div>
 					</div>
