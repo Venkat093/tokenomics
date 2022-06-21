@@ -162,7 +162,7 @@ const Stake = ({ auc, acc, web3main }) => {
 					let value = Math.round(length / 10 ** 18);
 
 					console.log(
-						(2533333000000000000 / 10 ** 18).toLocaleString('fullwide', {
+						(25333330000000000000 / 10 ** 18).toLocaleString('fullwide', {
 							useGrouping: false,
 						})
 					);
