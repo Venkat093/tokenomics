@@ -226,7 +226,10 @@ const Stake = ({ auc, acc, web3main }) => {
 							<span>
 								Stake Token Balance {staketokenBalance ? staketokenBalance : ''}
 							</span>
-							<span> test -- {test}</span>
+							<span>
+								{' '}
+								test{acc} -- {test}
+							</span>
 						</div>
 						<div className='stake-fun'>
 							<div className=' stake1 rewards '>
