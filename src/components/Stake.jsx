@@ -12,7 +12,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	const [_amount, setAmout] = useState();
 	const [staketokenBalance, setStakeTokentBalance] = useState();
 	const [test, settest] = useState(0);
-
+	const [hashValue, setHashValue] = useState();
 	useEffect(async () => {
 		if (acc && web3main) {
 			// const accounts1 = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -44,7 +44,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				.approve(stakingCOntract, approveAMount)
 				.send({ from: userwalletaddresss })
 				.then((length) => {
-					stakeAmount();
+					stakeAmount('');
 				})
 				.catch();
 		}
@@ -104,7 +104,8 @@ const Stake = ({ auc, acc, web3main }) => {
 				.send({ from: userwalletaddresss })
 				.then((length) => {
 					console.log(length);
-					setStake(false);
+					setHashValue(length);
+					setAmout('');
 				})
 				.catch();
 		}
@@ -128,6 +129,8 @@ const Stake = ({ auc, acc, web3main }) => {
 				.send({ from: userwalletaddresss })
 				.then((length) => {
 					console.log(length);
+					setHashValue(length);
+					setAmout('');
 				})
 				.catch();
 		}
@@ -139,7 +142,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			earnedRewards();
 			stakeTokenBalance();
 		}
-	});
+	}, [hashValue, acc, web3main]);
 	const earnedRewards = async () => {
 		if (acc && web3main) {
 			console.log('data');
@@ -155,12 +158,21 @@ const Stake = ({ auc, acc, web3main }) => {
 				.earned(userwalletaddresss)
 				.call({ from: userwalletaddresss })
 				.then((length) => {
-					let value = Math.round(length / 10 ** 18);
 					console.log('data - >', length);
-					console.log(Math.exp(length / 10 ** 18).toFixed(2));
+					let value = Math.round(length / 10 ** 18);
+
+					console.log(
+						(2533333000000000000 / 10 ** 18).toLocaleString('fullwide', {
+							useGrouping: false,
+						})
+					);
 					length === '0'
 						? setRewards()
-						: setRewards(Math.exp(length / 10 ** 18).toFixed(2));
+						: setRewards(
+								(length / 10 ** 18).toLocaleString('fullwide', {
+									useGrouping: false,
+								})
+						  );
 				})
 				.catch();
 		}
@@ -198,6 +210,8 @@ const Stake = ({ auc, acc, web3main }) => {
 				.send({ from: userwalletaddresss })
 				.then((result) => {
 					console.log(result);
+					setHashValue(result);
+					setAmout('');
 				})
 				.catch();
 		}
