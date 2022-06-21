@@ -9,7 +9,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	const [stake, setStake] = useState(true);
 	const [accountid, setaccountid] = useState();
 	const [rewards, setRewards] = useState();
-	const [_amount, setAmout] = useState(0);
+	const [_amount, setAmout] = useState();
 	const [staketokenBalance, setStakeTokentBalance] = useState();
 	useEffect(async () => {
 		if (acc && web3main) {
