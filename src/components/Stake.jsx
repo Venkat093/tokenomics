@@ -11,6 +11,8 @@ const Stake = ({ auc, acc, web3main }) => {
 	const [rewards, setRewards] = useState();
 	const [_amount, setAmout] = useState();
 	const [staketokenBalance, setStakeTokentBalance] = useState();
+	const [test, settest] = useState(0);
+
 	useEffect(async () => {
 		if (acc && web3main) {
 			// const accounts1 = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -49,6 +51,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	};
 
 	const StakeToken = async (e) => {
+		settest(test + 1);
 		if (acc && web3main) {
 			const accounts = await web3main.eth.getAccounts();
 			//  console.log(accounts);
@@ -223,6 +226,7 @@ const Stake = ({ auc, acc, web3main }) => {
 							<span>
 								Stake Token Balance {staketokenBalance ? staketokenBalance : ''}
 							</span>
+							<span> test -- {test}</span>
 						</div>
 						<div className='stake-fun'>
 							<div className=' stake1 rewards '>
