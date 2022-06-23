@@ -166,13 +166,7 @@ const Stake = ({ auc, acc, web3main }) => {
 							useGrouping: false,
 						})
 					);
-					length === '0'
-						? setRewards()
-						: setRewards(
-								(length / 10 ** 18).toLocaleString('fullwide', {
-									useGrouping: false,
-								})
-						  );
+					length === '0' ? setRewards() : setRewards(length);
 				})
 				.catch();
 		}
