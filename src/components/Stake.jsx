@@ -166,7 +166,7 @@ const Stake = ({ auc, acc, web3main }) => {
 							useGrouping: false,
 						})
 					);
-					length === '0' ? setRewards() : setRewards(length);
+					length === '0' ? setRewards(length) : setRewards(length);
 				})
 				.catch();
 		}
