@@ -212,6 +212,13 @@
 		"type": "function"
 	},
 	{
+		"inputs": [{ "internalType": "bool", "name": "_status", "type": "bool" }],
+		"name": "pausedContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{ "internalType": "bytes32", "name": "role", "type": "bytes32" },
 			{ "internalType": "address", "name": "account", "type": "address" }
