@@ -34,7 +34,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0xadc22D2bF20d69243c039306bF2c301Ea2c49F14'
 			);
 
-			const stakingCOntract = '0x27A3c340ab07D0474F99C568a099dbAEbAd573dC';
+			const stakingCOntract = '0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310';
 
 			let approveAMount = web3main.utils.toBN(
 				fromExponential(parseFloat(_amount) * Math.pow(10, 25))
@@ -62,7 +62,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0xadc22D2bF20d69243c039306bF2c301Ea2c49F14'
 			);
 
-			const stakingCOntract = '0x27A3c340ab07D0474F99C568a099dbAEbAd573dC';
+			const stakingCOntract = '0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310';
 
 			let amount = web3main.utils.toBN(
 				fromExponential(parseFloat(_amount) * Math.pow(10, 18))
@@ -92,7 +92,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			console.log('ccc', userwalletaddresss);
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0x27A3c340ab07D0474F99C568a099dbAEbAd573dC'
+				'0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310'
 			);
 
 			let amount = web3main.utils.toBN(
@@ -117,7 +117,7 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0x27A3c340ab07D0474F99C568a099dbAEbAd573dC'
+				'0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310'
 			);
 
 			let amount = web3main.utils.toBN(
@@ -151,7 +151,7 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0x27A3c340ab07D0474F99C568a099dbAEbAd573dC'
+				'0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310'
 			);
 
 			staking.methods
@@ -183,7 +183,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			let userwalletaddresss = accounts[0];
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0x27A3c340ab07D0474F99C568a099dbAEbAd573dC'
+				'0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310'
 			);
 			staking.methods
 				.stakeBalanceOfUser(userwalletaddresss)
@@ -202,7 +202,7 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0x27A3c340ab07D0474F99C568a099dbAEbAd573dC'
+				'0xb57ca6E8EcBbABFD613c74f663C3c8973E40c310'
 			);
 
 			staking.methods
