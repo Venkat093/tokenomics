@@ -13,6 +13,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	const [staketokenBalance, setStakeTokentBalance] = useState();
 	const [test, settest] = useState(0);
 	const [hashValue, setHashValue] = useState();
+	const [balence, setBalence] = useState();
 	useEffect(async () => {
 		if (acc && web3main) {
 			// const accounts1 = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -51,7 +52,6 @@ const Stake = ({ auc, acc, web3main }) => {
 	};
 
 	const StakeToken = async (e) => {
-		settest(test + 1);
 		if (acc && web3main) {
 			const accounts = await web3main.eth.getAccounts();
 			//  console.log(accounts);
@@ -65,7 +65,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			const stakingCOntract = '0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b';
 
 			let amount = web3main.utils.toBN(
-				fromExponential(parseFloat(_amount) * Math.pow(10, 18))
+				fromExponential(parseFloat(balence) * Math.pow(10, 18))
 			);
 
 			token.methods
@@ -143,9 +143,15 @@ const Stake = ({ auc, acc, web3main }) => {
 			stakeTokenBalance();
 		}
 	}, [hashValue, acc, web3main]);
+
+	useEffect(() => {
+		console.log('earned rewards');
+		if (acc && web3main) {
+			balanceOf();
+		}
+	}, [, acc, web3main]);
 	const earnedRewards = async () => {
 		if (acc && web3main) {
-			console.log('data');
 			const accounts = await web3main.eth.getAccounts();
 			let userwalletaddresss = accounts[0];
 
@@ -161,11 +167,11 @@ const Stake = ({ auc, acc, web3main }) => {
 					console.log('data - >', length);
 					let value = Math.round(length / 10 ** 18);
 
-					console.log(
-						(25333330000000000000 / 10 ** 18).toLocaleString('fullwide', {
-							useGrouping: false,
-						})
-					);
+					// console.log(
+					// 	(25333330000000000000 / 10 ** 18).toLocaleString('fullwide', {
+					// 		useGrouping: false,
+					// 	})
+					// );
 					length === '0'
 						? setRewards()
 						: setRewards(
@@ -212,6 +218,27 @@ const Stake = ({ auc, acc, web3main }) => {
 					console.log(result);
 					setHashValue(result);
 					setAmout('');
+				})
+				.catch();
+		}
+	};
+	const balanceOf = async (e) => {
+		if (acc && web3main) {
+			const accounts = await web3main.eth.getAccounts();
+			//  console.log(accounts);
+			let userwalletaddresss = accounts[0];
+
+			let erc20Token = new web3main.eth.Contract(
+				ERC20,
+				'0xadc22D2bF20d69243c039306bF2c301Ea2c49F14'
+			);
+
+			erc20Token.methods
+				.balanceOf(userwalletaddresss)
+				.send({ from: userwalletaddresss })
+				.then((result) => {
+					console.log('balence of ', result);
+					setBalence(result);
 				})
 				.catch();
 		}
