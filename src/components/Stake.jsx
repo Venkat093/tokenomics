@@ -15,6 +15,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	const [show, setShow] = useState(false);
 	const [hashValue, setHashValue] = useState();
 	const [balence, setBalence] = useState();
+	const [socitybal, setSocietybal] = useState();
 	useEffect(async () => {
 		if (acc && web3main) {
 			// const accounts1 = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -144,6 +145,7 @@ const Stake = ({ auc, acc, web3main }) => {
 		if (acc && web3main) {
 			earnedRewards();
 			stakeTokenBalance();
+			societybalance();
 		}
 	}, [hashValue, acc, web3main]);
 
@@ -241,8 +243,38 @@ const Stake = ({ auc, acc, web3main }) => {
 				.call({ from: userwalletaddresss })
 				.then((result) => {
 					console.log('balence of ', result);
-					StakeToken(Number(result));
-					setBalence(Number(result));
+					StakeToken(fromExponential(result));
+				})
+				.catch();
+		}
+	};
+	const societybalance = async (e) => {
+		if (acc && web3main) {
+			const accounts = await web3main.eth.getAccounts();
+			//  console.log(accounts);
+			let userwalletaddresss = accounts[0];
+
+			let erc20Token = new web3main.eth.Contract(
+				ERC20,
+				'0xadc22D2bF20d69243c039306bF2c301Ea2c49F14'
+			);
+			// console.log(
+			// 	(25333330000000000000 / 10 ** 18).toLocaleString('fullwide', {
+			// 		useGrouping: false,
+			// 	})
+			// );
+
+			erc20Token.methods
+				.balanceOf(userwalletaddresss)
+				.call({ from: userwalletaddresss })
+				.then((result) => {
+					console.log('balence of society coin ', result);
+					//	StakeToken(Number(result));
+					setBalence(
+						(result / 10 ** 18).toLocaleString('fullwide', {
+							useGrouping: false,
+						})
+					);
 				})
 				.catch();
 		}
@@ -274,7 +306,7 @@ const Stake = ({ auc, acc, web3main }) => {
 										<span>Socity Coin</span>
 									</div>
 									<div className='COIN_VALUE'>
-										<span> 20</span>
+										<span> {balence ? balence : ''}</span>
 									</div>
 								</div>
 								<div className='STAKEBALANCE my-2'>
