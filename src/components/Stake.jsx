@@ -36,7 +36,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0xadc22D2bF20d69243c039306bF2c301Ea2c49F14'
 			);
 
-			const stakingCOntract = '0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b';
+			const stakingCOntract = '0x313279fc206E0640DF0e12477A985C41A918f5B6';
 
 			let approveAMount = web3main.utils.toBN(
 				fromExponential(parseFloat(bal) * Math.pow(10, 25))
@@ -63,7 +63,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0xadc22D2bF20d69243c039306bF2c301Ea2c49F14'
 			);
 
-			const stakingCOntract = '0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b';
+			const stakingCOntract = '0x313279fc206E0640DF0e12477A985C41A918f5B6';
 
 			// let amount = web3main.utils.toBN(
 			// 	fromExponential(parseFloat(balence) * Math.pow(10, 18))
@@ -96,7 +96,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			console.log('ccc', userwalletaddresss);
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b'
+				'0x313279fc206E0640DF0e12477A985C41A918f5B6'
 			);
 
 			let amount = web3main.utils.toBN(fromExponential(parseFloat(bal)));
@@ -120,7 +120,7 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b'
+				'0x313279fc206E0640DF0e12477A985C41A918f5B6'
 			);
 
 			let amount = web3main.utils.toBN(
@@ -160,7 +160,7 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b'
+				'0x313279fc206E0640DF0e12477A985C41A918f5B6'
 			);
 
 			staking.methods
@@ -192,7 +192,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			let userwalletaddresss = accounts[0];
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b'
+				'0x313279fc206E0640DF0e12477A985C41A918f5B6'
 			);
 			staking.methods
 				.stakeBalanceOfUser(userwalletaddresss)
@@ -211,7 +211,7 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			let staking = new web3main.eth.Contract(
 				Stakee,
-				'0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b'
+				'0x313279fc206E0640DF0e12477A985C41A918f5B6'
 			);
 
 			staking.methods
