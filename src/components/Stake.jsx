@@ -3,15 +3,16 @@ import '../css/stake.css';
 import Web3 from 'web3';
 import Stakee from '../abi/Stakee.json';
 import fromExponential from 'from-exponential';
-import { Modal } from 'bootstrap';
 import ERC20 from '../abi/ERC20.json';
+import { Button, Modal } from 'react-bootstrap';
+import logo from '../assets/images/holycity.png';
 const Stake = ({ auc, acc, web3main }) => {
 	const [stake, setStake] = useState(true);
 	const [accountid, setaccountid] = useState();
 	const [rewards, setRewards] = useState();
 	const [_amount, setAmout] = useState();
 	const [staketokenBalance, setStakeTokentBalance] = useState();
-	const [test, settest] = useState(0);
+	const [show, setShow] = useState(false);
 	const [hashValue, setHashValue] = useState();
 	const [balence, setBalence] = useState();
 	useEffect(async () => {
@@ -24,7 +25,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			// setchainid(chainId)
 		}
 	}, [acc, web3main]);
-	const approveToken = async () => {
+	const approveToken = async (bal) => {
 		if (window.ethereum) {
 			const accounts = await web3main.eth.getAccounts();
 			let userwalletaddresss = accounts[0];
@@ -38,7 +39,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			const stakingCOntract = '0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b';
 
 			let approveAMount = web3main.utils.toBN(
-				fromExponential(parseFloat(_amount) * Math.pow(10, 25))
+				fromExponential(parseFloat(bal) * Math.pow(10, 25))
 			);
 
 			token.methods
@@ -51,7 +52,7 @@ const Stake = ({ auc, acc, web3main }) => {
 		}
 	};
 
-	const StakeToken = async (e) => {
+	const StakeToken = async (bal) => {
 		if (acc && web3main) {
 			const accounts = await web3main.eth.getAccounts();
 			//  console.log(accounts);
@@ -64,25 +65,28 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			const stakingCOntract = '0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b';
 
-			let amount = web3main.utils.toBN(
-				fromExponential(parseFloat(balence) * Math.pow(10, 18))
-			);
+			// let amount = web3main.utils.toBN(
+			// 	fromExponential(parseFloat(balence) * Math.pow(10, 18))
+			// );
+			console.log('bal', bal);
+			let amount = web3main.utils.toBN(fromExponential(bal));
 
 			token.methods
 				.allowance(userwalletaddresss, stakingCOntract)
 				.call({ from: userwalletaddresss })
 				.then((result) => {
 					if (result >= amount) {
-						stakeAmount(); // stake amount function call
+						console.log('stake amount');
+						stakeAmount(bal); // stake amount function call
 					} else {
-						approveToken(); // approve token  function call
+						approveToken(bal); // approve token  function call
 					}
 				})
 				.catch();
 		}
 	};
 
-	const stakeAmount = async () => {
+	const stakeAmount = async (bal) => {
 		console.log('calling');
 		if (acc && web3main) {
 			const accounts = await web3main.eth.getAccounts();
@@ -95,9 +99,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0xcfD8CAb7e15688003e43C24FF56d854A38EFa83b'
 			);
 
-			let amount = web3main.utils.toBN(
-				fromExponential(parseFloat(_amount) * Math.pow(10, 18))
-			);
+			let amount = web3main.utils.toBN(fromExponential(parseFloat(bal)));
 
 			staking.methods
 				.stake(amount)
@@ -112,6 +114,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	};
 	const withdrawAmount = async () => {
 		if (acc && web3main) {
+			setShow(false);
 			const accounts = await web3main.eth.getAccounts();
 			let userwalletaddresss = accounts[0];
 
@@ -144,12 +147,12 @@ const Stake = ({ auc, acc, web3main }) => {
 		}
 	}, [hashValue, acc, web3main]);
 
-	useEffect(() => {
-		console.log('earned rewards');
-		if (acc && web3main) {
-			balanceOf();
-		}
-	}, [, acc, web3main]);
+	// useEffect(() => {
+	// 	console.log('earned rewards');
+	// 	if (acc && web3main) {
+	// 		balanceOf();
+	// 	}
+	// }, [acc, web3main]);
 	const earnedRewards = async () => {
 		if (acc && web3main) {
 			const accounts = await web3main.eth.getAccounts();
@@ -195,7 +198,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				.stakeBalanceOfUser(userwalletaddresss)
 				.call({ from: userwalletaddresss })
 				.then((length) => {
-					setStakeTokentBalance(length / 10 ** 18);
+					setStakeTokentBalance((length / 10 ** 18).toFixed(2));
 				})
 				.catch();
 		}
@@ -235,10 +238,11 @@ const Stake = ({ auc, acc, web3main }) => {
 
 			erc20Token.methods
 				.balanceOf(userwalletaddresss)
-				.send({ from: userwalletaddresss })
+				.call({ from: userwalletaddresss })
 				.then((result) => {
 					console.log('balence of ', result);
-					setBalence(result);
+					StakeToken(Number(result));
+					setBalence(Number(result));
 				})
 				.catch();
 		}
@@ -257,28 +261,79 @@ const Stake = ({ auc, acc, web3main }) => {
 					</p>
 				</div>
 				<div className='py-5 Stake '>
-					<div className='px-3 py-5 gap-4 text-center card stake-card text-light'>
-						<div>
-							<span>
-								<b>Socity Coin</b>
-							</span>
-						</div>
-						<div>
-							<span>
-								Stake Token Balance {staketokenBalance ? staketokenBalance : ''}
-							</span>
-						</div>
-						<div className='stake-fun'>
-							<div className=' stake1 rewards '>
-								<span>Rewards Earned {rewards ? rewards : ''}</span>
+					<div className='py-3 gap-4 px-1 text-center card stake-card text-light'>
+						<div className='SOCIETY-CONTENT'>
+							<div className='SCOIETY-ICON'>
+								<span className='nav-logo'>
+									<img className='logo-img' src={logo} />
+								</span>
 							</div>
-							<div className=' stake2 claim-btn'>
-								<button onClick={claimRewards}>Claim rewards</button>
-							</div>
-						</div>
+							<div className='SCOIETY-CONTENT'>
+								<div className='COINHEADER'>
+									<div className='COIN_NAME'>
+										<span>Socity Coin</span>
+									</div>
+									<div className='COIN_VALUE'>
+										<span> 20</span>
+									</div>
+								</div>
+								<div className='STAKEBALANCE my-2'>
+									<div className='STAKE_NAME'>
+										<span> StakeTokenBalanc </span>
+									</div>
+									<div className='STAKE_VALUE'>
+										<span> {staketokenBalance ? staketokenBalance : ''}</span>
+									</div>
+								</div>
+								<div className='STAKEBALANCE my-2'>
+									<div className='STAKE_NAME'>
+										<span> Rewards </span>
+									</div>
+									<div className='STAKE_VALUE'>
+										<span> {rewards ? rewards : ''}</span>
+									</div>
+								</div>
 
-						<div className='stake-fun'>
-							<div className=' stake1'>
+								<div className='STAK-CONTENT'>
+									<div className=' '>
+										<button onClick={claimRewards}>Claim</button>
+									</div>
+									<div className='Stake'>
+										<button onClick={balanceOf}>Stake</button>
+									</div>
+									<div className='unstake'>
+										<button
+											onClick={() => {
+												setShow(true);
+												//withdrawAmount();
+											}}>
+											Unstake
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<Modal
+					show={show}
+					onHide={(e) => {
+						setShow(false);
+					}}
+					backdrop='static'>
+					<Modal.Body className=''>
+						<div
+							style={{
+								width: '100%',
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'center',
+								alignItems: 'center',
+							}}
+							className='unstake-modal'>
+							<div>
 								<input
 									type='text'
 									placeholder='Amount'
@@ -290,17 +345,28 @@ const Stake = ({ auc, acc, web3main }) => {
 									}}
 								/>
 							</div>
-							<div className=' stake2 mb-2'>
-								<button onClick={StakeToken}>Stake</button>
-							</div>
-							<div className='stake3 px-1'>
-								<button onClick={withdrawAmount}>Unstake</button>
+							<div className='modalbutton'>
+								<button
+									onClick={() => {
+										withdrawAmount();
+									}}>
+									Unstake
+								</button>
 							</div>
 						</div>
-					</div>
-				</div>
+					</Modal.Body>
+					<Modal.Footer>
+						<Button
+							variant='secondary'
+							onClick={(e) => {
+								withdrawAmount();
+								setShow(false);
+							}}>
+							Close
+						</Button>
+					</Modal.Footer>
+				</Modal>
 			</div>
-			<div></div>
 		</div>
 	);
 };

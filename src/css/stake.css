@@ -1,3 +1,57 @@
+.SOCIETY-CONTENT {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	justify-content: center;
+}
+.unstake-modal {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+.COINHEADER {
+	margin-left: -15px;
+	display: flex;
+	flex-direction: row;
+	gap: 80px;
+}
+.STAK-CONTENT {
+	margin-left: -35px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.STAKEBALANCE {
+	margin-left: -15px;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+.SCOIETY-ICON > .nav-logo {
+}
+.SCOIETY-ICON .logo-img {
+	width: 80%;
+	height: 80%;
+}
+.modalbutton button {
+	color: var(--accent-color1);
+	background-color: #4a4a4a;
+
+	padding: 0.1rem 1.1rem !important;
+	border-radius: 2rem;
+	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+	border: solid 3px transparent;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0)
+		),
+		linear-gradient(101deg, var(--goldenyellow), var(--yellow));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	box-shadow: 2px 1000px 1px #4a4a4a inset;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+}
 .signup {
 	border-bottom: 0.1rem solid white;
 	padding-top: 4rem;
@@ -58,7 +112,6 @@
 .signup .container .content button {
 	color: var(--accent-color1);
 	background-color: #4a4a4a;
-	font-weight: bold;
 	padding: 1rem 3rem;
 	border-radius: 2rem;
 	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
@@ -84,11 +137,20 @@
 	z-index: 10;
 }
 .stake-card {
-	height: 8cm;
+	height: 6cm;
 	width: 15cm;
 	font-size: 18px;
-	background-color: rgb(113, 113, 113) !important;
+	/* background-color: rgb(113, 113, 113) !important; */
 	border-radius: 15px !important;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important;
+
+	background: linear-gradient(
+		101deg,
+		rgba(103, 101, 101, 0.1),
+		rgba(255, 255, 255, 0.1)
+	) !important;
+	color: #fff !important;
+	overflow: hidden;
 }
 .Stake {
 	padding-right: 3rem !important;
@@ -102,7 +164,7 @@
 .stake-card button {
 	color: var(--accent-color1);
 	background-color: #4a4a4a;
-	font-weight: bold;
+
 	padding: 0.5rem 0.5rem;
 	border-radius: 2rem;
 	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
@@ -118,6 +180,15 @@
 	transition: 0.5s ease-in-out;
 	cursor: pointer;
 }
+
+.modal-content {
+	background-color: var(--background) !important;
+	color: #fff;
+}
+.modal-body {
+	justify-content: space-evenly;
+}
+
 @media screen and (min-width: 780px) and (max-width: 1080px) {
 	.signup {
 		position: relative;
@@ -134,9 +205,9 @@
 		padding-left: 0rem !important;
 	}
 	.stake-card {
-		font-size: 28px;
-		width: 650px;
-		height: 16cm;
+		font-size: 16px;
+		width: 500px;
+		height: 6cm;
 	}
 	.stake2 {
 		margin-top: 8px;
@@ -174,9 +245,9 @@
 		padding-left: 0rem !important;
 	}
 	.stake-card {
-		font-size: 28px;
+		font-size: 16px;
 		width: 500px;
-		height: 14.5cm;
+		height: 6cm;
 	}
 	.stake2 {
 		margin-top: 8px;
@@ -200,7 +271,7 @@
 	.stake-card button {
 		color: var(--accent-color1);
 		background-color: #4a4a4a;
-		font-weight: bold;
+
 		padding: 0.1rem 1.1rem !important;
 		border-radius: 2rem;
 		box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
@@ -221,7 +292,7 @@
 	.stake-card button {
 		color: var(--accent-color1);
 		background-color: #4a4a4a;
-		font-weight: bold;
+
 		padding: 0.1rem 1.1rem !important;
 		border-radius: 2rem;
 		box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
@@ -252,9 +323,9 @@
 		justify-content: center;
 	}
 	.stake-card {
-		font-size: 28px;
+		font-size: 18px;
 		width: 9cm;
-		height: 18cm;
+		height: 7cm;
 	}
 	.stake2 {
 		margin-top: 8px;
@@ -277,5 +348,14 @@
 	}
 	.signup .container .content .sub-title {
 		font-size: 25px;
+	}
+	.SCOIETY-ICON .logo-img {
+		width: 100%;
+		height: 100%;
+	}
+	.STAK-CONTENT {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
 	}
 }
