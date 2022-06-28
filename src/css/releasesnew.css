@@ -1,0 +1,9 @@
+.releases .green {
+	background-color: var(--green);
+}
+
+.releases {
+	margin: 5rem 0;
+	overflow-x: hidden;
+	padding: 2rem 2rem;
+}

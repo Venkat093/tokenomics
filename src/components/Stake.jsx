@@ -293,7 +293,7 @@ const Stake = ({ auc, acc, web3main }) => {
 							<div className='SCOIETY-CONTENT mx-5'>
 								<div className='COINHEADER'>
 									<div className='COIN_NAME'>
-										<span>Socity Coin</span>
+										<span>SOCIETY COIN</span>
 									</div>
 									<div className='COIN_VALUE'>
 										<span> {balence ? balence : ''}</span>
@@ -301,7 +301,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								</div>
 								<div className='STAKEBALANCE my-2'>
 									<div className='STAKE_NAME'>
-										<span> StakeTokenBalanc </span>
+										<span> COINS IN VAULT </span>
 									</div>
 									<div className='STAKE_VALUE'>
 										<span> {staketokenBalance ? staketokenBalance : ''}</span>
@@ -309,7 +309,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								</div>
 								<div className='STAKEBALANCE my-2'>
 									<div className='STAKE_NAME'>
-										<span> Rewards </span>
+										<span> REWARDS </span>
 									</div>
 									<div className='STAKE_VALUE'>
 										<span> {rewards ? rewards : ''}</span>
@@ -348,7 +348,7 @@ const Stake = ({ auc, acc, web3main }) => {
 							<div className='SCOIETY-CONTENT mx-5'>
 								<div className='COINHEADER'>
 									<div className='COIN_NAME'>
-										<span>Socity Coin</span>
+										<span>SOCIETY COIN</span>
 									</div>
 									<div className='COIN_VALUE'>
 										<span> </span>
@@ -356,7 +356,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								</div>
 								<div className='STAKEBALANCE my-2'>
 									<div className='STAKE_NAME'>
-										<span> StakeTokenBalanc </span>
+										<span> COINS IN VAULT </span>
 									</div>
 									<div className='STAKE_VALUE'>
 										<span> </span>
@@ -364,7 +364,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								</div>
 								<div className='STAKEBALANCE my-2'>
 									<div className='STAKE_NAME'>
-										<span> Rewards </span>
+										<span> REWARDS </span>
 									</div>
 									<div className='STAKE_VALUE'>
 										<span></span>

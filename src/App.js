@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Landing from './Routes/Home.jsx';
 import Footer from './components/Footer';
-import Home from './components/Home';
+// import Home from './components/Home';
 import Navbar from './components/navbar copy';
 import Stake from './components/Stake.jsx';
 import Release from './components/Release';

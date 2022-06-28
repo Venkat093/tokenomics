@@ -6,10 +6,13 @@
 	overflow-x: hidden;
 	padding: 2rem 2rem;
 }
+.releases .release .card-container {
+	height: 13cm;
+}
 
 .releases .release {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	border-radius: 0.5rem;
 }
 .releases .release .content {
@@ -124,6 +127,7 @@
 	}
 	.releases .release .card-container {
 		zoom: 0.5;
+		height: 15cm;
 	}
 	.releases .release .ellipse {
 		display: none !important;

@@ -42,53 +42,12 @@ export default function Release() {
 	});
 	return (
 		<div className='releases'>
-			<div className='release orange'>
-				<div className='content'>
-					<h2 className='title'>About</h2>
-					<p className='description'>
-						We have released four limited edition NFTs early which can be bid on
-						via <a href='#'>OpenSea</a>
-					</p>
-					<p className='description'>
-						There will be the only four of these NFTs we ever make, so be sure
-						not to miss out!
-					</p>
-					<p className='description'>50% of proceeds go to charity.</p>
-					<a href='#' className='link'>
-						Check them out <BsArrowRight />
-					</a>
-				</div>
-				<div className='image'>
-					<img src={release1} alt='release' />
-					<div className='ellipse pink'></div>
-				</div>
-			</div>
-			<div className='release green'>
-				<div className='card-container'>
-					<div className='App py-5' style={{ width: '50%', height: '100%' }}>
-						<Doughnut data={data} />
+			<div className='release green '>
+				<div className='card-container  '>
+					<div className='App py-2' style={{ width: '400px', height: '400px' }}>
+						<Doughnut className='chart' data={data} />
 					</div>
 					<div className='ellipse orange'></div>
-				</div>
-				<div className='content'>
-					<h2 className='title'> Release </h2>
-					<ul>
-						<li>
-							<b> Staking & Rewards 15% </b>
-						</li>
-						<li>
-							<b> Presale 35%</b>
-						</li>
-						<li>
-							<b> Development & Team 15% </b>
-						</li>
-						<li>
-							<b>Tresurey & ecosystem 15%</b>
-						</li>
-						<li>
-							<b>Ineqyuty 20%</b>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
