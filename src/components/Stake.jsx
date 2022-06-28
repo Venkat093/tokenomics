@@ -282,17 +282,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	return (
 		<div className='signup'>
 			<div className='container'>
-				<div className='content'>
-					<p className='sub-title'>Socity Coin</p>
-					<h1 className='title'>Staking</h1>
-					<p className='description mb-5'>
-						Staking gives you the power to earn rewards on your Socity Coin
-						Holdings. Start ataking in just couple of kicks and automatically
-						earn rewards twice a week. Instantly unstake at any time with no
-						penalties
-					</p>
-				</div>
-				<div className='py-5 Stake d-flex gap-5 flex-column px-4 '>
+				<div className='py-5 Stake d-flex gap-5  px-4 '>
 					<div className='py-3 gap-4 px-1 text-center card stake-card text-light'>
 						<div className='SOCIETY-CONTENT '>
 							<div className='SCOIETY-ICON'>
@@ -300,7 +290,7 @@ const Stake = ({ auc, acc, web3main }) => {
 									<img className='logo-img' src={logo} />
 								</span>
 							</div>
-							<div className='SCOIETY-CONTENT'>
+							<div className='SCOIETY-CONTENT mx-5'>
 								<div className='COINHEADER'>
 									<div className='COIN_NAME'>
 										<span>Socity Coin</span>
@@ -326,12 +316,12 @@ const Stake = ({ auc, acc, web3main }) => {
 									</div>
 								</div>
 
-								<div className='STAK-CONTENT '>
+								<div className='STAK-CONTENT my-3'>
 									<div className=' '>
-										<button onClick={claimRewards}>Claim</button>
+										<button onClick={claimRewards}>RECEIVE GIFTS</button>
 									</div>
 									<div className='Stake'>
-										<button onClick={balanceOf}>Stake</button>
+										<button onClick={balanceOf}>STORE COINS</button>
 									</div>
 									<div className='unstake'>
 										<button
@@ -339,14 +329,68 @@ const Stake = ({ auc, acc, web3main }) => {
 												setShow(true);
 												//withdrawAmount();
 											}}>
-											Unstake
+											REMOVE COINS FROM VAULT TO SEND
 										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className='py-3 gap-4 px-1 text-center card stake-card text-light'></div>
+				</div>
+				<div className='py-5 Stake d-flex gap-5  px-4 '>
+					<div className='py-3 gap-4 px-1 text-center card stake-card text-light'>
+						<div className='SOCIETY-CONTENT '>
+							<div className='SCOIETY-ICON'>
+								<span className='nav-logo'>
+									<img className='logo-img' src={logo} />
+								</span>
+							</div>
+							<div className='SCOIETY-CONTENT mx-5'>
+								<div className='COINHEADER'>
+									<div className='COIN_NAME'>
+										<span>Socity Coin</span>
+									</div>
+									<div className='COIN_VALUE'>
+										<span> </span>
+									</div>
+								</div>
+								<div className='STAKEBALANCE my-2'>
+									<div className='STAKE_NAME'>
+										<span> StakeTokenBalanc </span>
+									</div>
+									<div className='STAKE_VALUE'>
+										<span> </span>
+									</div>
+								</div>
+								<div className='STAKEBALANCE my-2'>
+									<div className='STAKE_NAME'>
+										<span> Rewards </span>
+									</div>
+									<div className='STAKE_VALUE'>
+										<span></span>
+									</div>
+								</div>
+
+								<div className='STAK-CONTENT '>
+									<div className=' '>
+										<button onClick={() => {}}>RECEIVE GIFTS</button>
+									</div>
+									<div className='Stake'>
+										<button onClick={() => {}}>STORE COINS</button>
+									</div>
+									<div className='unstake'>
+										<button
+											onClick={() => {
+												//setShow(true);
+												//withdrawAmount();
+											}}>
+											REMOVE COINS FROM VAULT TO SEND
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div>
