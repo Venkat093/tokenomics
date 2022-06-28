@@ -292,7 +292,60 @@ const Stake = ({ auc, acc, web3main }) => {
 						penalties
 					</p>
 				</div>
-				<div className='py-5 Stake '>
+				<div className='py-5 Stake d-flex gap-5 flex-column px-4 '>
+					<div className='py-3 gap-4 px-1 text-center card stake-card text-light'>
+						<div className='SOCIETY-CONTENT'>
+							<div className='SCOIETY-ICON'>
+								<span className='nav-logo'>
+									<img className='logo-img' src={logo} />
+								</span>
+							</div>
+							<div className='SCOIETY-CONTENT'>
+								<div className='COINHEADER'>
+									<div className='COIN_NAME'>
+										<span>Socity Coin</span>
+									</div>
+									<div className='COIN_VALUE'>
+										<span> {balence ? balence : ''}</span>
+									</div>
+								</div>
+								<div className='STAKEBALANCE my-2'>
+									<div className='STAKE_NAME'>
+										<span> StakeTokenBalanc </span>
+									</div>
+									<div className='STAKE_VALUE'>
+										<span> {staketokenBalance ? staketokenBalance : ''}</span>
+									</div>
+								</div>
+								<div className='STAKEBALANCE my-2'>
+									<div className='STAKE_NAME'>
+										<span> Rewards </span>
+									</div>
+									<div className='STAKE_VALUE'>
+										<span> {rewards ? rewards : ''}</span>
+									</div>
+								</div>
+
+								<div className='STAK-CONTENT'>
+									<div className=' '>
+										<button onClick={claimRewards}>Claim</button>
+									</div>
+									<div className='Stake'>
+										<button onClick={balanceOf}>Stake</button>
+									</div>
+									<div className='unstake'>
+										<button
+											onClick={() => {
+												setShow(true);
+												//withdrawAmount();
+											}}>
+											Unstake
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div className='py-3 gap-4 px-1 text-center card stake-card text-light'>
 						<div className='SOCIETY-CONTENT'>
 							<div className='SCOIETY-ICON'>
