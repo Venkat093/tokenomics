@@ -1,0 +1,37 @@
+.link-card {
+	height: 6cm;
+	width: 6cm;
+	font-size: 18px;
+	/* background-color: rgb(113, 113, 113) !important; */
+	border-radius: 15px !important;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important;
+
+	background: linear-gradient(
+		101deg,
+		rgba(140, 138, 138, 0.1),
+		rgba(255, 254, 254, 0.1)
+	) !important;
+	color: #fff !important;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 250px) and (max-width: 535px) {
+	.link-card {
+		height: 5cm;
+		width: 8cm;
+	}
+}
+
+@media screen and (min-width: 535px) and (max-width: 780px) {
+	.link-card {
+		height: 5cm;
+		width: 14cm;
+	}
+}
+
+@media screen and (min-width: 780px) and (max-width: 1080px) {
+	.link-card {
+		height: 5cm;
+		width: 8cm;
+	}
+}

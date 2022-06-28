@@ -13,6 +13,12 @@ import Stake from './components/Stake.jsx';
 import Release from './components/Release';
 import fromExponential from 'from-exponential';
 import { Modal } from 'react-bootstrap';
+import Linkcards from './components/LLinkcards.jsx';
+import Logopage from './components/Logopage.jsx';
+import Societycoinwallet from './components/Links/Societycoinwallet.jsx';
+import SocietyFare from './components/Links/SocietyFare.jsx';
+import SocietyLocalist from './components/Links/SocietyLocalist.jsx';
+import SocietyRides from './components/Links/SocietyRides.jsx';
 function App() {
 	const [theme, setTheme] = useState('dark');
 	const changeTheme = () => {
@@ -115,6 +121,24 @@ function App() {
 					</Route>
 					<Route exact path='/Stake'>
 						<Stake acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/Links'>
+						<Linkcards acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/Logopage'>
+						<Logopage acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/Societywallet'>
+						<Societycoinwallet acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/fare'>
+						<SocietyFare acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/Locallist'>
+						<SocietyLocalist acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/Rides'>
+						<SocietyRides acc={acc} web3main={web3main} prov={prov} />
 					</Route>
 				</Switch>
 				<Footer />

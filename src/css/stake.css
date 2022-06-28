@@ -147,7 +147,7 @@
 	background: linear-gradient(
 		101deg,
 		rgba(103, 101, 101, 0.1),
-		rgba(255, 255, 255, 0.1)
+		rgba(245, 240, 240, 0.1)
 	) !important;
 	color: #fff !important;
 	overflow: hidden;
@@ -357,5 +357,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 10px;
+	}
+	.SCOIETY-ICON .logo-img {
+		/* display: none; */
 	}
 }

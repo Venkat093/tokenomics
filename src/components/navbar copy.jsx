@@ -128,8 +128,8 @@ const Navbar = ({ change, web3m, provider1 }) => {
 			<div className={`nav-items content ${isOpen && 'open'}`}>
 				<a href='/Stake'>Stake</a>
 				<a href='/'>Home</a>
-				<a href='/'>About</a>
-				<a href='/contact'>Contact</a>
+				<a href='/Links'>Links</a>
+				<a href='/Logopage'>Logo page</a>
 			</div>
 			<div>
 				{acc ? (
