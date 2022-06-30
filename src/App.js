@@ -118,9 +118,6 @@ function App() {
 				<Navbar change={change} web3m={web3m} provider1={provider1} />
 				<Switch>
 					<Route exact path='/'>
-						<Landing />
-					</Route>
-					<Route exact path='/Stake'>
 						<Stake acc={acc} web3main={web3main} prov={prov} />
 					</Route>
 					<Route exact path='/Stakee'>

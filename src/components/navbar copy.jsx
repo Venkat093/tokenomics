@@ -126,8 +126,8 @@ const Navbar = ({ change, web3m, provider1 }) => {
 			</span>
 
 			<div className={`nav-items content ${isOpen && 'open'}`}>
-				<a href='/Stake'>Stake</a>
-				<a href='/'>Home</a>
+				<a href='/'>Stake</a>
+				<a href='/f'>Home</a>
 				<a href='/Links'>Links</a>
 				<a href='/Logopage'>Logo page</a>
 			</div>
