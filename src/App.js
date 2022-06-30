@@ -19,6 +19,7 @@ import Societycoinwallet from './components/Links/Societycoinwallet.jsx';
 import SocietyFare from './components/Links/SocietyFare.jsx';
 import SocietyLocalist from './components/Links/SocietyLocalist.jsx';
 import SocietyRides from './components/Links/SocietyRides.jsx';
+import Stakenew from './components/Stakenew.jsx';
 function App() {
 	const [theme, setTheme] = useState('dark');
 	const changeTheme = () => {
@@ -121,6 +122,9 @@ function App() {
 					</Route>
 					<Route exact path='/Stake'>
 						<Stake acc={acc} web3main={web3main} prov={prov} />
+					</Route>
+					<Route exact path='/Stakee'>
+						<Stakenew acc={acc} web3main={web3main} prov={prov} />
 					</Route>
 					<Route exact path='/Links'>
 						<Linkcards acc={acc} web3main={web3main} prov={prov} />
