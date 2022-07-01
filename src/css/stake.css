@@ -15,6 +15,11 @@
 	flex-direction: row;
 	gap: 80px;
 }
+.logo-imgg {
+	margin-left: -15px;
+	width: 120px;
+	height: 130px;
+}
 .STAK-CONTENT {
 	margin-left: -15px;
 	display: flex;
@@ -30,7 +35,7 @@
 .SCOIETY-ICON > .nav-logo {
 }
 .SCOIETY-ICON .logo-img {
-	width: 105px;
+	width: 90px;
 	height: 105px;
 }
 .modalbutton button {

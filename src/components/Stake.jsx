@@ -7,6 +7,7 @@ import fromExponential from 'from-exponential';
 import ERC20 from '../abi/ERC20.json';
 import { Button, Modal } from 'react-bootstrap';
 import logo from '../assets/images/holycity.png';
+import societycoinlog from '../assets/images/SOCIETYCOINLOGO.png';
 const Stake = ({ auc, acc, web3main }) => {
 	const [stake, setStake] = useState(true);
 	const [accountid, setaccountid] = useState();
@@ -55,6 +56,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				.approve(stakingCOntract, approveAMount)
 				.send({ from: userwalletaddresss })
 				.then((length) => {
+					console.log(length);
 					stakeAmount('');
 				})
 				.catch();
@@ -557,13 +559,13 @@ const Stake = ({ auc, acc, web3main }) => {
 						<div className='SOCIETY-CONTENT '>
 							<div className='SCOIETY-ICON'>
 								<span className='nav-logo'>
-									<img className='logo-img' src={logo} />
+									<img className='logo-img' src={societycoinlog} />
 								</span>
 							</div>
 							<div className='SCOIETY-CONTENT mx-5'>
 								<div className='COINHEADER'>
 									<div className='COIN_NAME'>
-										<span>SOCIETY COIN</span>
+										<span>SOCIETYCOIN</span>
 									</div>
 									<div className='COIN_VALUE'>
 										<span> {balence ? balence : ''}</span>
@@ -571,7 +573,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								</div>
 								<div className='STAKEBALANCE my-2'>
 									<div className='STAKE_NAME'>
-										<span> COINS IN VAULT </span>
+										<span> STORED SOCIETYCOIN </span>
 									</div>
 									<div className='STAKE_VALUE'>
 										<span> {staketokenBalance ? staketokenBalance : ''}</span>
@@ -612,13 +614,13 @@ const Stake = ({ auc, acc, web3main }) => {
 						<div className='SOCIETY-CONTENT '>
 							<div className='SCOIETY-ICON'>
 								<span className='nav-logo'>
-									<img className='logo-img' src={logo} />
+									<img className='logo-imgg' src={logo} />
 								</span>
 							</div>
 							<div className='SCOIETY-CONTENT mx-5'>
 								<div className='COINHEADER'>
 									<div className='COIN_NAME'>
-										<span>SOCIETY KEY</span>
+										<span>SOCIETYKEY</span>
 									</div>
 									<div className='COIN_VALUE'>
 										<span> {balencee ? balencee : ''}</span>
@@ -626,7 +628,7 @@ const Stake = ({ auc, acc, web3main }) => {
 								</div>
 								<div className='STAKEBALANCE my-2'>
 									<div className='STAKE_NAME'>
-										<span> COINS IN VAULT </span>
+										<span> STORED SOCIETYKEY </span>
 									</div>
 									<div className='STAKE_VALUE'>
 										<span> {staketokenBalancee ? staketokenBalancee : ''}</span>
