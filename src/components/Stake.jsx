@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/stake.css';
 import Web3 from 'web3';
 import Stakee from '../abi/Stakee.json';
+import stake2 from '../abi/Stake2.json';
 import fromExponential from 'from-exponential';
 import ERC20 from '../abi/ERC20.json';
 import { Button, Modal } from 'react-bootstrap';
@@ -298,7 +299,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0x314E34BBA56f38ef08577a55EFF0aC4FEe65d1CB'
 			);
 
-			const stakingCOntract = '0xb61eE1F24a32E7b28d4d685415A602152FBa9569';
+			const stakingCOntract = '0xBaeC09961FD6b56d1301830108f5628E340b4F6D';
 
 			let approveAMount = web3main.utils.toBN(
 				fromExponential(parseFloat(bal) * Math.pow(10, 25))
@@ -325,7 +326,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				'0x314E34BBA56f38ef08577a55EFF0aC4FEe65d1CB'
 			);
 
-			const stakingCOntract = '0xb61eE1F24a32E7b28d4d685415A602152FBa9569';
+			const stakingCOntract = '0xBaeC09961FD6b56d1301830108f5628E340b4F6D';
 
 			// let amount = web3main.utils.toBN(
 			// 	fromExponential(parseFloat(balence) * Math.pow(10, 18))
@@ -357,8 +358,8 @@ const Stake = ({ auc, acc, web3main }) => {
 			// window.web3 = new Web3(window.ethereum);
 			console.log('ccc', userwalletaddresss);
 			let staking = new web3main.eth.Contract(
-				Stakee,
-				'0xb61eE1F24a32E7b28d4d685415A602152FBa9569'
+				stake2,
+				'0xBaeC09961FD6b56d1301830108f5628E340b4F6D'
 			);
 
 			let amount = web3main.utils.toBN(fromExponential(parseFloat(bal)));
@@ -381,8 +382,8 @@ const Stake = ({ auc, acc, web3main }) => {
 			let userwalletaddresss = accounts[0];
 
 			let staking = new web3main.eth.Contract(
-				Stakee,
-				'0xb61eE1F24a32E7b28d4d685415A602152FBa9569'
+				stake2,
+				'0xBaeC09961FD6b56d1301830108f5628E340b4F6D'
 			);
 
 			let amount = web3main.utils.toBN(
@@ -422,8 +423,8 @@ const Stake = ({ auc, acc, web3main }) => {
 			let userwalletaddresss = accounts[0];
 
 			let staking = new web3main.eth.Contract(
-				Stakee,
-				'0xb61eE1F24a32E7b28d4d685415A602152FBa9569'
+				stake2,
+				'0xBaeC09961FD6b56d1301830108f5628E340b4F6D'
 			);
 
 			staking.methods
@@ -454,8 +455,8 @@ const Stake = ({ auc, acc, web3main }) => {
 			const accounts = await web3main.eth.getAccounts();
 			let userwalletaddresss = accounts[0];
 			let staking = new web3main.eth.Contract(
-				Stakee,
-				'0xb61eE1F24a32E7b28d4d685415A602152FBa9569'
+				stake2,
+				'0xBaeC09961FD6b56d1301830108f5628E340b4F6D'
 			);
 			staking.methods
 				.stakeBalanceOfUser(userwalletaddresss)
@@ -473,8 +474,8 @@ const Stake = ({ auc, acc, web3main }) => {
 			let userwalletaddresss = accounts[0];
 
 			let staking = new web3main.eth.Contract(
-				Stakee,
-				'0xb61eE1F24a32E7b28d4d685415A602152FBa9569'
+				stake2,
+				'0xBaeC09961FD6b56d1301830108f5628E340b4F6D'
 			);
 
 			staking.methods
