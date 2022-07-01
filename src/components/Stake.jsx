@@ -377,7 +377,7 @@ const Stake = ({ auc, acc, web3main }) => {
 	};
 	const withdrawAmountt = async () => {
 		if (acc && web3main) {
-			setShow(false);
+			setShoww(false);
 			const accounts = await web3main.eth.getAccounts();
 			let userwalletaddresss = accounts[0];
 
@@ -387,7 +387,7 @@ const Stake = ({ auc, acc, web3main }) => {
 			);
 
 			let amount = web3main.utils.toBN(
-				fromExponential(parseFloat(_amount) * Math.pow(10, 18))
+				fromExponential(parseFloat(_amountt) * Math.pow(10, 18))
 			);
 			console.log(amount);
 			staking.methods
