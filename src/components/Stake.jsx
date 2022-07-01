@@ -57,7 +57,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				.send({ from: userwalletaddresss })
 				.then((length) => {
 					console.log(length);
-					stakeAmount('');
+					stakeAmount(bal);
 				})
 				.catch();
 		}
@@ -311,7 +311,8 @@ const Stake = ({ auc, acc, web3main }) => {
 				.approve(stakingCOntract, approveAMount)
 				.send({ from: userwalletaddresss })
 				.then((length) => {
-					stakeAmountt('');
+					console.log(length);
+					stakeAmountt(bal);
 				})
 				.catch();
 		}
@@ -341,7 +342,7 @@ const Stake = ({ auc, acc, web3main }) => {
 				.call({ from: userwalletaddresss })
 				.then((result) => {
 					if (result >= amount) {
-						console.log('stake amount');
+						console.log('stake amount', bal);
 						stakeAmountt(bal); // stake amount function call
 					} else {
 						approveTokenn(bal); // approve token  function call
@@ -568,7 +569,10 @@ const Stake = ({ auc, acc, web3main }) => {
 										<span>SOCIETYCOIN</span>
 									</div>
 									<div className='COIN_VALUE'>
-										<span> {balence ? balence : ''}</span>
+										<span style={{ width: '10%' }}>
+											{' '}
+											{balence ? balence : ''}
+										</span>
 									</div>
 								</div>
 								<div className='STAKEBALANCE my-2'>
@@ -622,7 +626,7 @@ const Stake = ({ auc, acc, web3main }) => {
 									<div className='COIN_NAME'>
 										<span>SOCIETYKEY</span>
 									</div>
-									<div className='COIN_VALUE'>
+									<div className='COIN_VALUE d-flex flex-wrap'>
 										<span> {balencee ? balencee : ''}</span>
 									</div>
 								</div>

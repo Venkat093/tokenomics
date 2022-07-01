@@ -35,6 +35,7 @@
 .SCOIETY-ICON > .nav-logo {
 }
 .SCOIETY-ICON .logo-img {
+	position: relative;
 	width: 90px;
 	height: 105px;
 }
