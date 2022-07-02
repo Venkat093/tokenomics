@@ -105,7 +105,9 @@ function App() {
 			chainid == 0x80001 ? setShow(false) : setShow(true);
 		}
 	}, [accountid1, chainid, acc]);
-
+	// <Route exact path='/'>
+	// 					<Stake acc={acc} web3main={web3main} prov={prov} />
+	// 				</Route>
 	return (
 		// <div data-theme={theme} className='app-container'>
 		// 	<Navbar />
@@ -118,9 +120,6 @@ function App() {
 				<Navbar change={change} web3m={web3m} provider1={provider1} />
 				<Switch>
 					<Route exact path='/'>
-						<Stake acc={acc} web3main={web3main} prov={prov} />
-					</Route>
-					<Route exact path='/Stakee'>
 						<Stakenew acc={acc} web3main={web3main} prov={prov} />
 					</Route>
 					<Route exact path='/Links'>

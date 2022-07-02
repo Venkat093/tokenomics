@@ -1,34 +1,160 @@
-/* .cards {
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #eee;
+	font-family: sans-serif;
+}
+.flexone {
+	flex: 1;
 }
 
-.stake-card {
-	height: 5cm;
-	width: 10cm;
+.groups {
+	margin: 0 auto;
+	width: 780px;
+	padding: 10px;
+	height: auto;
 }
-.SOCIETY-COIN {
+.groups li {
+	position: relative;
+	list-style: none;
+
+	border-radius: 5px;
+	box-shadow: 0 3px 4px 0 #0001;
+	overflow: hidden;
+	margin-bottom: 30px;
+	transition: all 0.3s;
+}
+
+.groups .card {
+	width: 100%;
+
+	overflow: hidden;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	/* background: linear-gradient(
+		101deg,
+		rgba(255, 255, 255, 0.1),
+		rgba(252, 252, 252, 0.1)
+	) !important; */
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	background: rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(5px);
+}
+.groups .image-session {
+	float: left;
+	overflow: hidden;
+	margin-right: 20px;
+	width: 170px;
+}
+.meta-sission .COIN {
+	color: #fff;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	gap: 39px;
+	font-size: 14px;
+	font-weight: 400;
 }
-.SOCIETY-COIN-img {
-}
-.SOCIETY-COIN-img img {
-	height: 120px;
+.groups .image-session .image {
 	width: 120px;
+	height: 120px;
+	display: block;
+	background-size: cover;
+	background-position: center;
 }
-.SOCIETY-COIN-CONTENT {
+.groups .image-session .imagee {
+	margin-left: -33px;
+	width: 180px;
+	height: 160px;
+	display: block;
+	background-size: cover;
+	background-position: center;
+}
+.session {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+}
+.meta-sission {
+	float: right;
+	overflow: hidden;
+	margin-right: 0;
+	/* padding: 15px; */
 }
 
-@media screen and (min-width: 250px) and (max-width: 535px) {
-	.stake-card {
-		height: 4cm;
-		width: 9cm;
+.groups .body .title {
+	height: 60px;
+	overflow: hidden;
+	font-size: 24px;
+}
+.groups .body .desc {
+	height: 45px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+.groups .footer .button {
+	position: absolute;
+	bottom: 20px;
+	right: 25px;
+	background: #0075ff;
+	color: #fff;
+	line-height: 2.2;
+	padding: 0 20px;
+	border-radius: 50px;
+	text-decoration: none;
+	box-shadow: 0 1px 6px 0 #0004;
+	transition: all 0.3s;
+}
+.groups .footer .button:hover {
+	box-shadow: 0 3px 8px 0 #0005;
+	background: #063a78;
+	right: 15px;
+}
+.groups .footer .views {
+	display: block;
+	font-size: 12px;
+	margin-top: 40px;
+}
+
+@media screen and (max-width: 780px) {
+	.groups {
+		width: 96%;
 	}
-	.SOCIETY-COIN-img {
-		position: absolute;
-		top: 20%;
+	.groups li:hover {
+		transform: none;
+		box-shadow: none;
 	}
-} */
+}
+@media screen and (max-width: 560px) {
+	.groups .image-session {
+		float: left;
+		margin-right: 0;
+		width: 120px;
+	}
+	.groups .image-session .image {
+		width: 120px;
+		height: 129px;
+	}
+	.groups .card {
+		display: block;
+		height: 5cm;
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+	}
+	.meta-sission .COIN {
+		font-size: 11px;
+		font-weight: 500;
+		color: #fff;
+	}
+	.groups .image-session .imagee {
+		margin-left: -33px;
+		width: 180px;
+		height: 160px;
+	}
+}
